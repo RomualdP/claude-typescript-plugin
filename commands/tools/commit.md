@@ -14,6 +14,7 @@ Create a commit for the current changes.
    - Don't mix unrelated changes in one commit
 
 5. Create commit with conventional commit format:
+
    ```
    type(scope): description
 
@@ -21,6 +22,7 @@ Create a commit for the current changes.
    ```
 
 ## Conventional Commit Types
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `refactor`: Code change that neither fixes a bug nor adds a feature
@@ -31,6 +33,7 @@ Create a commit for the current changes.
 - `perf`: Performance improvement
 
 ## Rules
+
 - Subject line max 72 characters
 - Use imperative mood: "add" not "added"
 - No period at end of subject

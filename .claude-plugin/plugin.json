@@ -4,16 +4,10 @@
   "version": "1.0.0",
   "author": "Romuald Piquet",
   "license": "MIT",
-  "keywords": [
-    "typescript",
-    "tdd",
-    "testing",
-    "code-review",
-    "workflow"
-  ],
+  "keywords": ["typescript", "tdd", "testing", "code-review", "workflow"],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/RomualdP/claude-typescript-plugin"
   },
   "components": {
     "commands": true,
