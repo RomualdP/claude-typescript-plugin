@@ -1,0 +1,59 @@
+{
+  "name": "typescript-tdd-workflow",
+  "description": "TypeScript development plugin with TDD workflow, code review, and quality tools. Tests are the source of truth.",
+  "version": "1.0.0",
+  "author": "Romuald Piquet",
+  "license": "MIT",
+  "keywords": [
+    "typescript",
+    "tdd",
+    "testing",
+    "code-review",
+    "workflow"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "components": {
+    "commands": true,
+    "hooks": true
+  },
+  "settings": {
+    "permissions": {
+      "allow": [
+        "Edit",
+        "Write",
+        "Read",
+        "Bash(npm run:*)",
+        "Bash(npx prettier:*)",
+        "Bash(npx eslint:*)",
+        "Bash(git:*)",
+        "Bash(gh pr:*)",
+        "Bash(gh issue:*)"
+      ],
+      "deny": [
+        "Bash(rm -rf:*)",
+        "Bash(git push --force:*)",
+        "Bash(git reset --hard:*)"
+      ]
+    },
+    "hooks": {
+      "PostToolUse": [
+        {
+          "matcher": "Edit|Write",
+          "hooks": [
+            {
+              "type": "command",
+              "command": "npx prettier --write \"$CLAUDE_FILE_PATH\" 2>/dev/null || true"
+            },
+            {
+              "type": "command",
+              "command": "npx eslint --fix \"$CLAUDE_FILE_PATH\" 2>/dev/null || true"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
